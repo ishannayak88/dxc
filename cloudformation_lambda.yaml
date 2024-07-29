@@ -1,0 +1,12 @@
+Resources:
+  ExampleFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: exercise-lambda
+      Description: "Exercise to create lambda to read SSM into s3"
+      Code:
+        S3Bucket: s3://read-param-dxc/src/
+        S3Key: exercise-lambda.zip
+      Role: arn:aws:iam::580683821893:role/IAM-read-ssm-s3-lambda
+      Handler: index.lambda_handler
+      Runtime: python3.12
